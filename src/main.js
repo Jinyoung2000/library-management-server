@@ -3,6 +3,8 @@ const app = express();
 
 const indexRouter = require("./routes/index");
 
+app.use(express.json());
+
 app.use("/", indexRouter);
 
 const PORT = 8080;

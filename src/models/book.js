@@ -1,4 +1,3 @@
-
 const { DataTypes } = require("sequelize");
 const sequelize = require("../configs/database");
 
@@ -17,6 +16,11 @@ const Book = sequelize.define(
     author: {
       type: DataTypes.STRING(50),
       allowNull: false,
+    },
+    status: {
+      type: DataTypes.ENUM("AVAILABLE", "BORROWED"),
+      allowNull: true,
+      defaultValue: "AVAILABLE",
     },
   },
   {
